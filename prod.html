@@ -500,11 +500,22 @@
 
         <ul class="flex-grow-0 ml-auto mr-1 float-right justify-content-end" style="margin-top: 10px;">
             <div class="d-flex">
-                <form id=""></form>
-                <div class="col-xs-5"><button class="btn btn-light" id="noUser1" data-toggle="modal"
+                <form id="searchbox">
+                    <input type="text" placeholder="Any price" id="prc">
+                    <select id="prods">
+                        <option value="volvo">All types</option>
+                        <option value="saab">Chairs</option>
+                        <option value="opel">Beds</option>
+                        <option value="audi">Tables</option>
+                    </select>
+                    <button type="submit" class="btn btn-success mr-1" id="searc">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </form>
+                <div class="col-xs-5 pr-1"><button class="btn btn-light" id="noUser1" data-toggle="modal"
                         data-target="#login-modal">Log
                         in</button></div>
-                <div class="col-xs-5"><button class="btn btn-light" id="noUser2" data-toggle="modal"
+                <div class="col-xs-5 pl-1"><button class="btn btn-light" id="noUser2" data-toggle="modal"
                         data-target="#signup-modal" style="margin-right: 10px;">Sign
                         Up</button></div>
             </div>
@@ -660,30 +671,32 @@
                     </div>
 
                     <div class="col-sm-12 col-lg-6">
-                        <table class="table table-light table-hover">
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <p>Type: Bed</p>
-                                        <div class="d-flex">
-                                            <p class="text-success">Price: </p>
-                                            <p class="text-success" id="prc">1000</p>
-                                        </div>
-                                        <p>Posted On: 14/11/2020 17:30</p>
-                                        <div class="d-flex">
-                                            <p>Details: </p>
-                                            <p>A bed in perfect condition .Used only for an year.</p>
-                                        </div>
-                                    </td>
-                                </tr>
+                        <aside>
+                            <table class="table table-light table-hover">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <p>Type: Bed</p>
+                                            <div class="d-flex">
+                                                <p class="text-success">Price: </p>
+                                                <p class="text-success" id="prc">1000</p>
+                                            </div>
+                                            <p>Posted On: 14/11/2020 17:30</p>
+                                            <div class="d-flex">
+                                                <p>Details: </p>
+                                                <p>A bed in perfect condition .Used only for an year.</p>
+                                            </div>
+                                        </td>
+                                    </tr>
 
-                            </tbody>
-                        </table>
-                        <button class="btn btn-success " id="General1">Add To
-                            cart</button>
+                                </tbody>
+                            </table>
+                        </aside>
+                        <button class="btn btn-success " id="General1">Add To cart</button>
+                        <!--
                         <button class="btn btn-danger " id="myProd1">Remove Ad!</button>
                         <button class="btn btn-danger " id="myProd2">Remove From cart!</button>
-                        <button class="btn btn-success " id="myProd3">Confirm Buy!</button>
+                        <button class="btn btn-success " id="myProd3">Confirm Buy!</button>-->
                     </div>
                     <div class="col-sm-10 col-lg-12">
                         <div class="row">
@@ -691,22 +704,25 @@
                                 <div id="buyers_list">
                                     <h4>Buyers' List</h4>
                                     <ul style="max-height: 130px;overflow-y:auto">
+                                        <hr>
                                         <li>
                                             <div class="d-flex">
-                                                <p class="p-1" onclick="shw(2)"><u><i>Dwayne Johnson</i></u></p>
+                                                <p class="p-1" onclick="shw(0)"><u><i>Dwayne Johnson</i></u></p>
                                                 <p class="p-1">offered</p>
                                                 <p class="p-1"><i>1234 taka</i></p>
                                                 <p class="p-1">for this product</p>
                                             </div>
                                         </li>
+                                        <hr>
                                         <li>
                                             <div class="d-flex">
-                                                <p onclick="shw(2)" class="p-1"><u><i>Christino Ronaldo</i></u></p>
+                                                <p onclick="shw(1)" class="p-1"><u><i>Christino Ronaldo</i></u></p>
                                                 <p class="p-1"> offered </p>
                                                 <p class="p-1"><i>333 </i></p>
                                                 <p class="p-1"> taka for this product</p>
                                             </div>
                                         </li>
+                                        <hr>
                                         <li>
                                             <div class="d-flex">
                                                 <p class="p-1" onclick="shw(2)"><u><i>Leonel Messi</i></u></p>
@@ -715,6 +731,7 @@
                                                 <p class="p-1">for this product</p>
                                             </div>
                                         </li>
+                                        <hr>
                                     </ul>
                                 </div>
                             </div>
@@ -762,10 +779,12 @@
                 <div class="modal-body">
                     Please
 
-                    <button class="container-fluid btn btn-primary" data-dismiss="modal" id="login_cart">Log
+                    <button class="container-fluid btn btn-primary" data-dismiss="modal" id="login_cart"
+                        data-toggle="modal" data-target="#login-modal">Log
                         In</button><br>
                     or <br>
-                    <button class="container-fluid btn btn-primary" data-dismiss="modal" id="signup_cart">Sign
+                    <button class="container-fluid btn btn-primary" data-dismiss="modal" id="signup_cart"
+                        data-toggle="modal" data-target="#signup-modal">Sign
                         Up</button>
                 </div>
 
@@ -774,7 +793,22 @@
     </div>
 </body>
 <!--popup login + cart end-->
-<script src="../prods.js"></script>
+<script>
+
+    $('#General1').click(() => {
+        $('#add_cart_login').modal({ show: true })
+    })
+
+    function shw(x) {
+        var px = ['a.jpg', 'c.jpg', 'b.jpg']
+        var nm = ['Dwayne Johnson', 'Christiano Ronaldo', 'Leonel Messi']
+        document.getElementById('usImg').src = './assets/propix/' + px[x];
+
+        document.getElementById('usnm').innerHTML = nm[x];
+        $('#showUs').modal({ show: true })
+    }
+
+</script>
 
 
 </html>
