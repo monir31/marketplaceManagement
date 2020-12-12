@@ -1,0 +1,69 @@
+<a href="" class="btn btn-outline-info float-right mt-5" data-toggle="modal" data-target="#notif">Notifications</a>
+
+		<div class="modal fade" id="notif">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content ">
+					<div class="modal-body py-0">
+						<!-- notification -->
+						<div class="card notif my-3">
+							<img src="dondra.jpg" alt="">
+							<div>
+								<h1 class="ml-2">Product name</h1>
+								<h4 class="ml-2"><a href="#">Mr. Omuk</a> Wants to buy <a href="">Mr. Tomuk's</a> Product</h4>
+							</div>
+						</div>
+						<!-- notification -->
+
+						<!-- notification -->
+						<div class="card notif my-3">
+							<img src="dondra.jpg" alt="">
+							<div>
+								<h1 class="ml-2">Product name</h1>
+								<h4 class="ml-2"><a href="#">Mr. Omuk</a> Wants to buy <a href="">Mr. Tomuk's</a> Product</h4>
+							</div>
+						</div>
+						<!-- notification -->
+
+						<!-- notification -->
+						<div class="card notif">
+							<img src="dondra.jpg" alt="">
+							<div>
+								<h1 class="ml-2">Product name</h1>
+								<h4 class="ml-2"><a href="#">Mr. Omuk</a> Wants to buy <a href="">Mr. Tomuk's</a> Product</h4>
+							</div>
+						</div>
+						<!-- notification -->
+
+						<!-- notification -->
+						<div class="card notif my-3">
+							<img src="dondra.jpg" alt="">
+							<div>
+								<h1 class="ml-2">Product name</h1>
+								<h4 class="ml-2"><a href="#">Mr. Omuk</a> Wants to buy <a href="">Mr. Tomuk's</a> Product</h4>
+							</div>
+						</div>
+						<!-- notification -->
+
+						<!-- notification -->
+						<div class="card notif my-3">
+							<img src="dondra.jpg" alt="">
+							<div>
+								<h1 class="ml-2">Product name</h1>
+								<h4 class="ml-2"><a href="#">Mr. Omuk</a> Wants to buy <a href="">Mr. Tomuk's</a> Product</h4>
+							</div>
+						</div>
+						<!-- notification -->
+
+						<!-- notification -->
+						<div class="card notif my-3">
+							<img src="dondra.jpg" alt="">
+							<div>
+								<h1 class="ml-2">Product name</h1>
+								<h4 class="ml-2"><a href="#">Mr. Omuk</a> Wants to buy <a href="">Mr. Tomuk's</a> Product</h4>
+							</div>
+						</div>
+						<!-- notification -->	
+					</div>	
+				</div>
+			</div>
+		</div>
