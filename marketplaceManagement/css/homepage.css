@@ -1,0 +1,268 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: fixed;
+    min-height: 100vh;
+    background: green;
+    background: url("assets/loginbg.jpg");
+    background-repeat: top;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.horizontal-scrollable>.row {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+ul.nav-pills {
+    padding-top: 10vh;
+    position: fixed;
+    /*background: white;*/
+
+}
+
+.horizontal-scrollable>.row>.col-xs-4 {
+    display: inline-block;
+    float: none;
+}
+
+/* Decorations */
+
+.col-xs-4 {
+    color: white;
+    font-size: 24px;
+    padding-bottom: 20px;
+    padding-top: 18px;
+}
+
+.col-xs-4:nth-child(2n+1) {
+    background: green;
+}
+
+.col-xs-4:nth-child(2n+2) {
+    background: black;
+}
+#myScrollspy{
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+}
+
+@media only screen and (min-width: 992px) {
+ /* #myScrollspy{
+    display: flex;
+    flex-direction: column;
+  }*/
+  .cvb{
+    height: 100px;
+  }
+  .scfalse{
+    margin-top: 30px;
+    background: transparent;
+  }
+  .scimg{
+        visibility: hidden;
+    }
+    fieldset{
+        position: absolute;
+        left: 20px!important;
+        top: 70px!important;
+    }
+}
+
+    fieldset 
+    {
+        border: 1px solid black !important;
+        margin: 0;
+        xmin-width: 0;
+        padding: 10px;       
+        position: relative;
+        border-radius:4px;
+        /*background-color:#f5f5f5;*/
+        padding-left:10px!important;
+    }   
+    
+        legend
+        {
+            font-size:14px;
+            font-weight:bold;
+            margin-bottom: 0px; 
+            width: 90px; 
+            border: 1px solid black;
+            border-radius: 4px; 
+            padding: 5px 5px 5px 10px; 
+            background-color: lightblue;
+        }
+
+.jumbotron{
+    margin-top: -130px;
+    background: rgba(0,0,0,0.12);
+}
+.social_icon a i{
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
+.social_icon a i:hover{
+    color: blue;
+}
+
+.scfalse{
+    position: fixed;
+}
+
+@media only screen and (max-width: 992px){
+    .scfalse{
+    margin-top: -50px;
+    z-index: 100;
+    /*background: lightblue;*/
+    }
+    .sinput{
+        width: 70px!important;
+    }
+
+
+}
+
+fieldset{
+        height: 280px;
+        width: 150px;
+        position: fixed;
+        top: 60px;
+        left: -150px;
+        z-index: 1;
+        background: #22E7A9;
+        overflow-x: hidden;
+        transition: all 0.5s;
+}
+
+.sinput{
+    margin-left: -20px;
+    width: auto;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+   
+}
+.selec{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.homepagenav{
+    box-shadow: 5px 5px 70px rgba(0,0,0,0.15);
+}
+
+.logo{
+    width: 150px;
+    max-height: 50px;
+}
+
+.navbg{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    object-fit: cover;
+    z-index: 0; 
+}
+
+.scimg{
+    top: 20px;
+    width: 30px;
+    position: absolute;
+    left: 0;
+    transition: all 0.5s;
+} 
+
+.scimg.click{
+    left: 150px;
+}
+
+fieldset.show{
+    left: 0px;
+}
+
+#searchResultModal{
+    padding: 50px;
+}
+
+#searchResultModal .card .card-block{
+    margin: 10px;
+    margin-left: 100px;
+    border: 5px solid red;
+}
+#searchResultModal .card .card-block:hover{
+    box-shadow: 5px 5px 70px rgba(0,0,0,0.15);
+}
+
+#nouser button:active{
+    outline: none;
+}
+
+.s_card{
+    margin-right: 15px;
+}
+
+#nouser button{
+    outline: none;
+}
+#loggedin button{
+    outline: none;
+}
+#loggedin a{
+    text-decoration: none;
+    color: black;
+}
+.nav-item:hover{
+    border-left: 3px solid blue;
+}
+
+.dropdown-item{
+    cursor: pointer;
+}
+
+.form-control{
+    border: none;
+    border-radius: 0px;
+    border-bottom: 2px solid lightblue;
+}
+.form-control:hover{
+    border: none;
+    outline: none;
+    border-bottom: 2px solid green;
+}
+
+#products-posted a{
+    padding: 0;
+    width: 50px;
+    height: 30px;
+}
+#product-modal-cart a{
+    padding: 0;
+    width: 50px;
+    height: 30px;    
+}
+
+#fnameUp{
+    margin-right: 5px;
+}
+#lnameUp{
+    margin-left: 5px;
+}
+
+#notif_modal a{
+    padding: 0;
+    width: 100px;
+    height: 30px; 
+}

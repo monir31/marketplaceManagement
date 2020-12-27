@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="icon" href="./assets/system/favicon.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/productpage.css">
+    <link rel="stylesheet" href="css/lightslider.css">
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/lightslider.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+</head>
+
+
+<style>
+    /* The heart of the matter */
+    body {
+        display: fixed;
+        min-height: 100vh;
+        background: green;
+        background: url("assets/loginbg.jpg");
+        background-repeat: top;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+</style>
+
+<body>
+    <!--notifications modal -->
+    <div id="notif_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="my-modal-title">Notifications</h5>
+                    <button class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul id="notif_list" style="overflow-y:auto">
+                        <li class="notif d-flex justify-content-around">
+                            <p>John Doe offered 500 taka for you table.</p>
+                            <a href="./adsPage.html" class="btn btn-primary">view details</a>
+                        </li>
+                        <li class="notif d-flex justify-content-around">
+                            <p>John Doe offered 200 taka for you chair.</p>
+                            <a href="./adsPage.html" class="btn btn-primary">view details</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--notifications modal end-->
+
+
+    <!--update modal-->
+    <div class="modal fade" id="update-modal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <h4 class="modal-title" id="labelUp">Update Info</h4>
+                </div>
+                <div class="modal-body">
+                    <p id="desc"></p>
+                    <form class=" " id="UpdateUser">
+                        <div class="form-group d-flex">
+                            <input type="text" class="form-control" id="fnameUp" placeholder="Enter Firstname"
+                                name="fnameUp" required>
+                            <input type="text" class="form-control" id="lnameUp" placeholder="Enter Lastname"
+                                name="lnameUp" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="mailUp" placeholder="Enter Email" name="mailUp"
+                                required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="form-group d-flex">
+                            <p class="my-auto">Mobile: </p>
+                            <input type="text" class="form-control" id="phoneUp" placeholder="Enter phone number"
+                                name="phoneUp" required value="+880 ">
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="pwdUp" placeholder="Enter password"
+                                name="pswdUp" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-success">Update</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--update modal end-->
+
+    <!--prod list modal (myads mycart)-->
+    <div class="modal fade" id="product-modal-cart" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title" id="prod-list-title"></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <ul class="list-group list-group-flush" id="products-added">
+                        <!--dynamic contents-->
+                        <div class="d-flex justify-content-between my-1">
+                            <img src="./assets/products/b2.jpg" style="height: 50px;width:50px" alt="">
+                            Bed.500 taka.
+                            <a href="./cartsPage.html" class="btn btn-primary">view</a>
+                        </div>
+                        <div class="d-flex justify-content-between my-1">
+                            <img src="./assets/products/b4.jpg" style="height: 50px;width:50px" alt="">
+                            Bed.500 taka.
+                            <a href="./cartsPage.html" class="btn btn-primary">view</a>
+                        </div>
+                        <div class="d-flex justify-content-between my-1">
+                            <img src="./assets/products/t3.jpg" style="height: 50px;width:50px" alt="">
+                            Table ->900 taka.
+                            <a href="./cartsPage.html" class="btn btn-primary">view</a>
+                        </div>
+
+                        <!--dynamic contents end-->
+                    </ul>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--prod list modal (myads mycart) end-->
+
+    <!--prod list modal -->
+    <div class="modal fade" id="product-modal-ads" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title" id="prod-list-title"></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <ul class="list-group list-group-flush" id="products-posted">
+                        <!--dynamic contents-->
+                        <div class="d-flex justify-content-between my-1">
+                            <img src="./assets/products/c1.jpg" style="height: 50px;width:50px" alt="">
+                            Chair ->738 taka.
+                            <a href="./adsPage.html" class="btn btn-primary">view</a>
+                        </div>
+                        <div class="d-flex justify-content-between my-1">
+                            <img src="./assets/products/t4.jpg" style="height: 50px;width:50px" alt="">
+                            Table ->400 taka.
+                            <a href="./adsPage.html" class="btn btn-primary">view</a>
+                        </div>
+
+
+                        <!--dynamic contents end-->
+                    </ul>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--prod list modal end-->
+
+    <!--post ad modal-->
+    <div class="modal fade" id="postAd-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Post an ad!</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <p class="mb-3"><span class="text-danger">*</span>Please upload your captures of your product and DO NOT USE FAKE INFO!</p>
+                    <form class=" " id="postAds" enctype="multipart/form-data">
+                        <div class="form-group d-flex ">
+                            <label for="uname">Image1</label>
+                            <input type="file" class="form-control" id="file1" name="file1" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="form-group d-flex ">
+                            <label for="uname">Image2</label>
+                            <input type="file" class="form-control" id="file2" name="file2" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="form-group d-flex ">
+                            <label for="uname">Image3</label>
+                            <input type="file" class="form-control" id="file3" name="file3" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="form-group d-flex ">
+                            <label for="uname">Image4</label>
+                            <input type="file" class="form-control" id="file4" name="file4" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="form-group mt-5">
+                            
+                            <input type="text" class="form-control" id="AskedPricePostAd" placeholder="Desired Price"
+                                name="AskedPricePostAd" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="form-group form-group-lg my-3">
+                            
+                            <input type="text" class="form-control" id="DescrPostAd"
+                                placeholder="A short description about yor ad" name="DescrPostAd" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="form-group my-3">
+                            
+                            <select class="form-control" id="sel1">
+                                <option>Select Category (select one):</option>
+                                <option>Table</option>
+                                <option>Bed</option>
+                                <option>Chair</option>
+                                <option>Quilt</option>
+                                <option>Others</option>
+                            </select>
+                        </div>
+                        <button type="submit" id="postAdd" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--post ad modal end-->
+
+    <!--bargain-->
+    <div id="bargain-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="my-modal-title">Offer a price compatible for you</h5>
+                    <p>(Leave blank if you agree with the asked price)</p>
+                    <button class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="bargain">
+                        <div class="form-group">
+                            <label for="bargainPc">Price</label>
+                            <input id="bargainPc" class="form-control" type="text" name="Price">
+                        </div>
+                        <button class="btn btn-success" id="bargained" data-dismiss="modal" type="submit">Done!</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--bargain end-->
+
+
+    <div id="login-or-signup-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header d-flex container" style="display: flex;">
+                    <div>You must
+                        <span class="lspan" data-toggle="modal" data-target="#login-modal1" data-dismiss="modal">Log in
+                        </span>
+                        or
+                        <span class="sspan" data-toggle="modal" data-target="#signup-modal" data-dismiss="modal"> Sign
+                            up</span>
+                        to proceed.
+                    </div>
+                    <button class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- search result modal -->
+    <div class="modal fade" id="searchResultModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Search Result</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+
+                <div class="modal-body">
+                    <div class="container-fluid" style="overflow-x: scroll;">
+                        <div class="row flex-row flex-nowrap">
+                            <div class="s_card">
+                                <!-- <div class="card card-block"> -->
+                                <div class="card product" style="min-width:220px;">
+                                    <img class="card-img-top negro" src="assets/beds" alt="Card image">
+                                    <div class="card-body">
+                                        <h4 class="text-success prixe">Price: 450 taka</h4>
+                                        <h4 class="ctgr">Category: Chair</h4>
+                                        <h5>Used for: 1 month</h5>
+                                        <h6 class="">2 users have offered</h6>
+                                        <a href="productpage.html" class="button btn btn-primary">Check it out!</a>
+                                    </div>
+                                </div>
+                                <!-- </div> -->
+                            </div>
+
+                            <div class="s_card">
+                                <!-- <div class="card card-block"> -->
+                                <div class="card product" style="min-width:220px">
+                                    <img class="card-img-top negro" src="" alt="Card image">
+                                    <div class="card-body">
+                                        <h4 class="text-success prixe">Price: 450 taka</h4>
+                                        <h4 class="ctgr">Category: Chair</h4>
+                                        <h5>Used for: 6 years</h5>
+                                        <h6 class="">6 users have offered</h6>
+                                        <a href="productpage.html" class="button btn btn-primary">Check it out!</a>
+                                    </div>
+                                </div>
+                                <!-- </div> -->
+                            </div>
+                            <div class="s_card  product">
+                                <!-- <div class="card card-block"> -->
+                                <div class="card" style="min-width:220px">
+                                    <img class="card-img-top negro" src="" alt="Card image">
+                                    <div class="card-body">
+                                        <h4 class="text-success prixe">Price: 450 taka</h4>
+                                        <h4 class="ctgr">Category: Chair</h4>
+                                        <h5>Used for: 1 year</h5>
+                                        <h6 class="">9 users have offered</h6>
+                                        <a href="productpage.html" class="button btn btn-primary">Check it out!</a>
+                                    </div>
+                                </div>
+                                <!-- </div> -->
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- search result modal end-->
+
+
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-md navbar-dark justify-content-between  homepagenav" style="width: 100%;">
+        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+        <a href="homepage.html"><img class="logo user ml-n4" src="./assets/system/logo.png" alt=""></a>
+        <!-- <a href="homepage.html"><img class="favicon user ml-n4" src="images/favicon.png" alt=""></a> -->
+        <div class="d-flex" id="top">
+            <input class="bg-transparent sinput" type="number" id="searchbar" placeholder="e.g. 500৳"
+                autocomplete="off">
+            <select id="prods" class="bg-transparent mr-0 selec">
+                <!-- <option value="null">All types</option> -->
+                <option value="Chairs">Chairs</option>
+                <option value="Beds">Beds</option>
+                <option value="Tables">Tables</option>
+            </select>
+            <button class="btn" id="searchBtn"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </div>
+
+        <div class="dropdown dropleft" id="loggedin">
+            <!-- dropdown-toggle -->
+            <button role="button" type="button" class="bg-transparent border-0" data-toggle="dropdown"
+                style="padding: 0;">
+                <img src="./assets/propix/d.jpg" style="max-height: 40px; margin-top: 0; border-radius: 50px;" alt="">
+            </button>
+
+            <div id="colp" class="dropdown-menu ">
+                <div class="dropdown-item activeusr">
+                    <a class=" " id="dashboard1" data-toggle="modal" data-target="#postAd-modal">
+                        Post an Ad
+                    </a>
+                </div>
+                <div class="dropdown-item activeusr">
+                    <a class=" " id="dashboard2" data-toggle="modal" data-target="#update-modal">
+                        Update info
+                    </a>
+                </div>
+                <div class="dropdown-item activeusr">
+                    <a class="" id="myAds" data-toggle="modal" data-target="#product-modal-ads">
+                        My Ads</a>
+                </div>
+                <div class="dropdown-item activeusr">
+                    <a class=" " id="myCart" data-toggle="modal" data-target="#product-modal-cart">
+                        My cart</a>
+                </div>
+                <div class="dropdown-item activeusr">
+                    <a class="" id="notifications" data-toggle="modal" data-target="#notif_modal">
+                        Notifications
+                    </a>
+                </div>
+                <div class="dropdown-item activeusr">
+                    <a class="" id="logOut"><a href="productpage.html" style="text-decoration: none; color: black;">Log Out</a></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="dropdown dropleft " id="nouserx">
+            <button class="btn btn-light bg-transparent border-0" data-toggle="dropdown"
+                style="padding: 0; outline: none;">
+                <img src="./images/Avatar.png" style="max-height: 40px; margin-top: 0;" alt="">
+            </button>
+            <div class="dropdown-menu">
+                <div class="dropdown-item noUser" id="loginbtn" data-toggle="modal" data-target="#login-modal">Log in
+                </div>
+                <div class="dropdown-item noUser" id="signupnbtn" data-toggle="modal" data-target="#signup-modal">Sign
+                    up
+                </div>
+            </div>
+        </div>
+
+    </nav>
+    <!-- Nav Bar End -->
+
+    <div class="container" style="margin-top:100px">
+
+        <!-- products slider -->
+        <div class="row">
+            <div class="col-sm-12 col-lg-6">
+                <div id="my-carousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li class="active" data-target="#my-carousel" data-slide-to="0" aria-current="location"></li>
+                        <li data-target="#my-carousel" data-slide-to="1"></li>
+                        <li data-target="#my-carousel" data-slide-to="2"></li>
+                        <li data-target="#my-carousel" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="./assets/products/bb1.jpg" alt="">
+                            <div class="carousel-caption d-none d-md-block">
+                            </div>  
+                        </div>
+                        <div class="carousel-item ">
+                            <img class="d-block w-100" src="./assets/products/bb2.jpg" alt="">
+                            <div class="carousel-caption d-none d-md-block">
+                            </div>
+                        </div>
+                        <div class="carousel-item ">
+                            <img class="d-block w-100" src="./assets/products/bb3.jpg" alt="">
+                            <div class="carousel-caption d-none d-md-block">
+                            </div>
+                        </div>
+                        <div class="carousel-item ">
+                            <img class="d-block w-100" src="./assets/products/bb4.jpg" alt="">
+                            <div class="carousel-caption d-none d-md-block">
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#my-carousel" data-slide="prev" role="button">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#my-carousel" data-slide="next" role="button">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-6">
+                <div>
+                    <h3>Description:</h3>
+                    <p>The strongest, most durable furniture options, this furniture can last for hundreds of years if properly cared for. This Furniture's design is unique and exceptional. It will increase the decorative smartness of your home.
+                    Contemprory furniture refelects the design, this Double bed is made up of wood featuring with manual & head board storage. All the collections have an understated design that can adapt to any space.</p>
+                    <ul>
+                        <li>Dimension/size: 6.7*5*2.6 ft</li>
+                        <li>Easy to assemble</li>
+                        <li>Lucrative Design</li>
+                        <li>Perfect Finish</li>
+                    </ul>
+                </div>
+                <div class="d-flex justify-content-between mt-4">
+                    <h3 class="text-success">Price: ৳10,900</h3>
+                    <div>
+                        <h6>Posted on: <span class="font-italic">18:45 4/12/2019</span></h6>  
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <h6>Location: <span class="text-success font-italic">Sonadanga, Khulna.</span></h6>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex">
+                        <img src="./assets/propix/c.jpg" alt="" style="width: 50px; height: 50px; border-radius: 50px;">
+                        <div class="ml-3">
+                            <h6>Seller:</h6>
+                            <h6>Shahriar Kabir</h6>
+                        </div>
+                    </div>
+                    <div>
+                        <h6>Negotiatable: <span class="text-success">YES</span></h6>
+                        <h6>Category: <span class="text-success">Bed</span></h6> 
+                        <h6>Used for: <span class="text-success">3 months</span></h6> 
+                    </div>
+                </div>
+                
+                <div>
+                    <button class="btn btn-success" id="addcartBtn">
+                                Add to cart!
+                    </button>
+                    <button class="btn btn-danger" id="removeCartBtn">
+                        Remove Ads
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Product Slider end -->
+        <div>
+            <h4 class="mt-5 d-flex justify-content-center">People offers for this product</h4>
+            <hr>
+            <div class="slider">
+                <ul id="autoWidth" style="min-height: 600px;" class="cs-hidden mx-2">
+                    <li id="item-a" class="product">
+                        <div class="" style="width: 300px;">
+                            <div class="card m-3 " style="align-items: center;">
+                                <img src="./assets/propix/d.jpg" alt="" style="width: 100%;height:200px">
+                                <h4 class="text-success" id='offr'>Offered: 450 taka</h4>
+                                <h4>John Doe</h4>
+                                <h5>Location: Khulna</h5>
+                                <button class="btn btn-success ownerLogd mb-2">Accept Offer</button>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li id="item-b" class="product">
+                        <div class="" style="width: 300px;">
+                            <div class="card m-3 " style="align-items: center;">
+                                <img src="./assets/propix/7.jpg" alt="" style="width: 100%;height:200px">
+                                <h4 class="text-success">Offered: 460 taka</h4>
+                                <h4>Alisa</h4>
+                                <h5>Location: Jashore</h5>
+                                <button class="btn btn-success ownerLogd mb-2">Accept Offer</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="item-c" class="product">
+                        <div class="" style="width: 300px;">
+                            <div class="card m-3 " style="align-items: center;">
+                                <img src="./assets/propix/4.jpg" alt="" style="width: 100%;height:200px">
+                                <h4 class="text-success">Offered: 455 taka</h4>
+                                <h4>Mardin</h4>
+                                <h5>Location: Dhaka</h5>
+                                <button class="btn btn-success ownerLogd mb-2">Accept Offer</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="item-d" class="product">
+                        <div class="" style="width: 300px;">
+                            <div class="card m-3 " style="align-items: center;">
+                                <img src="./assets/propix/3.jpg" alt="" style="width: 100%;height:200px">
+                                <h4 class="text-success">Offered: 490 taka</h4>
+                                <h4>Lia Mos</h4>
+                                <h5>Location: Magura</h5>
+                                <button class="btn btn-success ownerLogd mb-2">Accept Offer</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="extra1" style="text-align: center;">
+            <h2>See also..</h2>
+        </div>
+
+        <div class="extra mt-5" style="text-align: center;">
+            <h3>Other Products of same category</h3>
+            <hr>
+        </div>
+        <div class="pdlist">
+            <div class="slider">
+                <ul id="autoWidth1" class="cs-hidden mx-2">
+                    <li id="item-a" class="product">
+                        <div class="crdbod">
+                            <div class="card m-3 " style="align-items: center;">
+                                <img src="./assets/products/t5.jpg" alt="" style="max-width: 250px;">
+                                <h4 class="text-success">Price: 9,450 taka</h4>
+                                <h5>Used for: 6 months</h5>
+                                <h6>11 users have offered</h6>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="item-b" class="product">
+                        <div class="crdbod">
+                            <div class="card m-3 " style="align-items: center;">
+                                <img src="./assets/products/c4.jpg" alt="" style="max-width: 250px;">
+                                <h4 class="text-success">Price: 7,350 taka</h4>
+                                <h5>Used for: 3 years</h5>
+                                <h6>12 users have offered</h6>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="item-c" class="product">
+                        <div class="crdbod">
+                            <div class="card m-3 " style="align-items: center;">
+                                <img src="./assets/products/b3.jpg" alt="" style="min-height: 250px;">
+                                <h4 class="text-success">Price: 10,450 taka</h4>
+                                <h5>Used for: 2 years</h5>
+                                <h6>23 users have offered</h6>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="item-d" class="product">
+                        <div class="crdbod">
+                            <div class="card m-3 " style="align-items: center;">
+                                <img src="./assets/products/t2.jpg" alt="" style="max-width: 250px;">
+                                <h4 class="text-success">Price: 4,450 taka</h4>
+                                <h5>Used for: 1 year</h5>
+                                <h6>34 users have offered</h6>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="item-e" class="product">
+                        <div class="crdbod">
+                            <div class="card m-3 " style="align-items: center;">
+                                <img src="./assets/products/c1.jpg" alt="" style="max-width: 250px;">
+                                <h4 class="text-success">Price: 4,950 taka</h4>
+                                <h5>Used for: 2 years</h5>
+                                <h6>45 users have offered</h6>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="extra" style="text-align: center;">
+            <h3>Other Products of near price</h3>
+            <hr>
+        </div>
+        <div class="pdlist">
+            <div class="slider">
+                <ul id="autoWidth2" class="cs-hidden mx-2">
+                    <li id="item-aa" class="product">
+                        <div class="" style="width: 300px;">
+                            <div class="card m-3 " style="align-items: center;">
+                                <img src="./assets/products/c4.jpg" alt="" style="width: 100%;height:200px">
+                                <h4 class="text-success">Price: 5,450 taka</h4>
+                                <h4>Category: Chair</h4>
+                                <h5>Used for: 5 year</h5>
+                                <h6>11 users have offered</h6>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="item-ab" class="product">
+                        <div class="" style="width: 300px;">
+                            <div class="card m-3 " style="align-items: center;">
+                                <img src="./assets/products/c3.jpg" alt="" style="width: 100%;height:200px">
+                                <h4 class="text-success">Price: 2,700 taka</h4>
+                                <h4>Category: Chair</h4>
+                                <h5>Used for: 1 year</h5>
+                                <h6>6 users have offered</h6>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li id="item-ab" class="product">
+                        <div class="" style="width: 300px;">
+                            <div class="card m-3 " style="align-items: center;">
+                                <img src="./assets/products/t5.jpg" alt="" style="width: 100%;height:200px">
+                                <h4 class="text-success">Price: 9,450 taka</h4>
+                                <h4>Category: Table</h4>
+                                <h5>Used for: 3 years</h5>
+                                <h6>3 users have offered</h6>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <footer class="page-footer font-small lightblue ">
+
+        <!-- Footer Links -->
+        <!-- text-center text-md-left -->
+        <div class="container-fluid">
+
+            <!-- Grid row -->
+            <div class="row">
+                <!-- about us -->
+                <div class="col-md-4">
+                    <h5 class="text-primary font-weight-bold text-uppercase mt-3 mb-4">About Us</h5>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum omnis rerum harum laboriosam
+                        quos, sint ut explicabo laborum doloremque vero illo minus, maxime dignissimos eos libero,
+                        magnam quas eveniet ipsam?</p>
+                </div>
+                <!-- about us -->
+                <!-- Grid column -->
+                <div class="col-md-4 social_icon">
+
+                    <!-- Links -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-primary">Social Links</h5>
+
+                    <a href="#!"><i class="fab fa-facebook "></i> </a>
+                    <a href="#!"><i class="fab fa-twitter "></i> </a>
+                    <a href="#!"><i class="fas fa-envelope "></i></a>
+                    <a href=""><i class="fab fa-youtube"></i></a>
+
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-4">
+
+                    <!-- Links -->
+                    <h5 class="text-primary font-weight-bold text-uppercase mt-3 mb-4">This Website was powered by</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            HTML
+                        </li>
+                        <li>
+                            CSS
+                        </li>
+                        <li>
+                            javascript
+                        </li>
+                        <li>
+                            bootstrap
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="/"> marketplace_management.com</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+
+</body>
+
+<script>
+
+    function getel(x) {
+        return document.getElementById(x)
+    }
+    var acptbtn = document.getElementsByClassName('ownerLogd')
+    for (let n = 0; n < acptbtn.length; n++) {
+        acptbtn[n].style.display = 'none'
+    }
+
+    var active = getel('loggedin')
+    var nouser = getel('nouserx')
+    active.style.display = 'none'
+    var addcartBtn = getel('addcartBtn')
+    var removeCartBtn = getel('removeCartBtn')
+    removeCartBtn.style.display = 'none'
+
+    var userStatus = 0
+    userLoggedIn();
+    addcartBtn.onclick = () => {
+        if (userStatus) {
+            $('#bargain-modal').modal({ show: true })
+        }
+        else {
+            $('#login-or-signup-modal').modal({ show: true })
+        }
+    }
+
+    function userLoggedIn() {
+        userStatus = 1;
+        nouser.style.display = 'none'
+        active.style.display = 'block'
+        $('signup-modal').modal('hide')
+        for (let n = 0; n < acptbtn.length; n++) {
+            acptbtn[n].style.display = 'block'
+        }
+    }
+
+    var item_a = getel('item-a')
+    item_a.style.display = 'none'
+
+    item_a.style.display = 'block';
+    addcartBtn.style.display = 'none'
+    removeCartBtn.style.display = 'block'
+    getel('offr').innerHTML = `Offered 500 taka`
+
+    getel('bargained').onclick = () => {
+        item_a.style.display = 'block';
+        addcartBtn.style.display = 'none'
+        removeCartBtn.style.display = 'block'
+        getel('offr').innerHTML = `Offered ${getel('bargainPc').value} taka`
+    }
+    removeCartBtn.onclick = () => {
+        item_a.style.display = 'none'
+        removeCartBtn.style.display = 'none';
+        addcartBtn.style.display = 'block'
+    }
+    getel('searchBtn').onclick = () => {
+        var vl = getel('prods').value
+        var pc = getel('searchbar').value
+        var a = document.getElementsByClassName('prixe')
+        for (let n = 0; n < a.length; n++) {
+            let m = parseInt(pc)+(n*9);
+            a[n].innerHTML = `Price: ৳ ${m}`
+        }
+        var b = document.getElementsByClassName('ctgr')
+        for (let n = 0; n < a.length; n++) {
+            b[n].innerHTML = `Category: ${vl}`
+        }
+        var b = document.getElementsByClassName('negro')
+        for (let n = 0; n < a.length; n++) {
+            b[n].src = `./assets/products/${vl}${n+1}.jpg`
+        }
+        $('#searchResultModal').modal({ show: true })
+    }
+    getel('postAdd').onclick = () => {
+        var posted = getel('products-posted')
+        posted.innerHTML = `
+        <div class="d-flex justify-content-between">
+            <img src="./assets/d.jpg" style="height: 50px;width:50px" alt="">
+            Table.500 taka.
+            <a href="/adsPage.html" class="btn btn-primary">view</a>
+        </div>
+        `
+            + posted.innerHTML;
+        $('#postAd-modal').modal('hide')
+        $('#product-modal-ads').modal({ show: true })
+
+    }
+    var productroot = document.getElementsByClassName('product')
+    for (let n = 0; n < productroot.length; n++) {
+        productroot[n].onclick = () => {
+            window.location.href = './productpage.html'
+        }
+    }
+</script>
+
+</html>

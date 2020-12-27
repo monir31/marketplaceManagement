@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace</title>
+    <link rel="icon" href="./assets/system/favicon.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/lightslider.css">
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/lightslider.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="./css/homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+</head>
+
+<style>
+    body {
+        display: fixed;
+        min-height: 100vh;
+        background: green;
+        background: url("assets/loginbg.jpg");
+        background-repeat: top;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+</style>
+
+<body>
+    <!-- search modal -->
+    <div class="modal fade" id="searchResultModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Search Result</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+
+                <div class="modal-body">
+                    <div class="container-fluid" style="overflow-x: scroll;">
+                        <div class="row flex-row flex-nowrap">
+                            <div class="s_card">
+                                <div class="card" style="min-width:250px;">
+                                    <img class="card-img-top negro" src="" alt="Card image">
+                                    <div class="card-body">
+                                        <h4 class="text-success prixe">Price: 450 taka</h4>
+                                        <h4 class="ctgr">Category: Chair</h4>
+                                        <h5>Used for: 2 year</h5>
+                                        <h6 class="">11 users have offered</h6>
+                                        <a href="productpage.html" class="button btn btn-primary">Check it out!</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="s_card">
+                                <div class="card" style="min-width:250px">
+                                    <img class="card-img-top negro" src="" alt="Card image">
+                                    <div class="card-body">
+                                        <h4 class="text-success prixe">Price: 450 taka</h4>
+                                        <h4 class="ctgr">Category: Chair</h4>
+                                        <h5>Used for: 4 year</h5>
+                                        <h6 class="">23 users have offered</h6>
+                                        <a href="productpage.html" class="button btn btn-primary">Check it out!</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="s_card">
+                                <div class="card" style="min-width:250px">
+                                    <img class="card-img-top negro" src="" alt="Card image">
+                                    <div class="card-body">
+                                        <h4 class="text-success prixe">Price: 450 taka</h4>
+                                        <h4 class="ctgr">Category: Chair</h4>
+                                        <h5>Used for: 3 year</h5>
+                                        <h6 class="">16 users have offered</h6>
+                                        <a href="productpage.html" class="button btn btn-primary">Check it out!</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="s_card">
+                                <div class="card" style="min-width:250px;">
+                                    <img class="card-img-top negro" src="" alt="Card image">
+                                    <div class="card-body">
+                                        <h4 class="text-success prixe">Price: 450 taka</h4>
+                                        <h4 class="ctgr">Category: Chair</h4>
+                                        <h5>Used for: 1 year</h5>
+                                        <h6 class="">6 users have offered</h6>
+                                        <a href="productpage.html" class="button btn btn-primary">Check it out!</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="s_card">
+
+                                <div class="card" style="min-width:250px">
+                                    <img class="card-img-top negro" src="" alt="Card image">
+                                    <div class="card-body">
+                                        <h4 class="text-success prixe">Price: 450 taka</h4>
+                                        <h4 class="ctgr">Category: Chair</h4>
+                                        <h5>Used for: 1 year</h5>
+                                        <h6 class="">9 users have offered</h6>
+                                        <a href="productpage.html" class="button btn btn-primary">Check it out!</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- search modal end -->
+
+
+    <!--notifications modal-->
+    <div id="notif_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="my-modal-title">Notifications</h5>
+                    <button class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul id="notif_list" style="overflow-y:auto">
+                        <li class="notif d-flex justify-content-around">
+                            <p>John Doe offered 500 taka for you table.</p>
+                            <a href="./adsPage.html" class="btn btn-primary">View details</a>
+                        </li>
+                        <li class="notif d-flex justify-content-around">
+                            <p>John Doe offered 200 taka for you chair.</p>
+                            <a href="./adsPage.html" class="btn btn-primary">View details</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--notifications modal end-->
+
+    <!--login modal-->
+    <div class="modal fade" id="login-modal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <h4 class="modal-title">Log In</h4>
+                </div>
+                <div class="modal-body">
+                    <!-- method="POST" -->
+                    <form id="loginForm" class=" " action="homepage.html" method="get">
+                        <div class="form-group my-3">
+                            
+                            <input type="text" class="form-control" id="uname_login" placeholder="Enter username"
+                                name="uname_login" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback" id="if-un">Please fill out this field.</div>
+                        </div>
+                        <div class="form-group my-3">
+                            
+                            <input type="password" class="form-control" id="pwd_login" placeholder="Enter password"
+                                name="pwd_login" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+
+                        </div>
+                        <button type="submit" id="login-normal" class="btn btn-primary"
+                            data-dismiss="modal">Login</button>
+                    </form><!-- type="submit" -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--login modal end-->
+
+    <!--signup modal-->
+    <div class="modal fade" id="signup-modal" role="dialog">
+        <div class="modal-dialog">
+            <div id="signuptyp" style="visibility: hidden;">0</div>
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <h4 class="modal-title" id="label">Sign Up</h4>
+                    <p id="descreg">Please fill up all the fields</p>
+                </div>
+                <div class="modal-body" style="max-height:100vh;overflow-y: scroll;">
+                    <p id="desc"></p>
+                    <form class=" " id="signup">
+                        <div class="d-flex">
+                            <div class="mr-2">
+                                <p class="form-control" for="uname" style="min-width: 130px;">Profile Image: </p>
+                            </div>
+                            <div class="form-group">
+                                <input type="file" class="form-control " id="proPic" name="proPic" required>
+                                <div class="valid-feedback">Valid.</div>
+                                <div class="invalid-feedback">Please upload your real picture or no one would want to
+                                    make
+                                    trade
+                                    with you</div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <input type="text" class="form-control" id="fname_reg" placeholder="Enter Firstname"
+                                    name="fname" required>
+                                <div class="valid-feedback">Valid.</div>
+                                <div class="invalid-feedback">Please fill out this field.</div>
+                            </div>
+                            <div class="form-group col-6">
+                                <input type="text" class="form-control" id="lname_reg" placeholder="Enter Last name"
+                                    name="lname" required>
+                                <div class="valid-feedback">Valid.</div>
+                                <div class="invalid-feedback">Please fill out this field.</div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="mail_reg" placeholder="Enter Email" name="mail"
+                                required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="form-group d-flex">
+                            <p class="my-auto">Mobile: </p>
+                            <input type="text" class="form-control" id="phoneUp" placeholder="Enter phone number"
+                                name="phoneUp" required value="+880 ">
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="uname_reg" placeholder="Enter username"
+                                name="uname" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="pwd_reg" placeholder="Enter password"
+                                name="pswd" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" name="remember" required> I agree on
+                                <a href="/terms">Terms and Conditions</a>
+                                <div class="valid-feedback">Valid.</div>
+                                <div class="invalid-feedback">Check this checkbox to continue.</div>
+                            </label>
+                        </div>
+                        <button id="submit_reg" type="submit" class="btn btn-success">Sign Up</button>
+                        <div class="spinner-grow text-primary" id="signupSpin" style="display: none;" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--signup modal end-->
+
+    <!--update modal-->
+    <div class="modal fade" id="update-modal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <h4 class="modal-title" id="labelUp">Update Info</h4>
+                </div>
+                <div class="modal-body">
+                    <p id="desc"></p>
+                    <form class=" " id="UpdateUser">
+                        <div class="form-group d-flex">
+                            <input type="text" class="form-control" id="fnameUp" placeholder="Enter Firstname"
+                                name="fnameUp" required>
+                            <input type="text" class="form-control" id="lnameUp" placeholder="Enter Lastname"
+                                name="lnameUp" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="mailUp" placeholder="Enter Email" name="mailUp"
+                                required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="form-group d-flex">
+                            <p class="my-auto">Mobile: </p>
+                            <input type="text" class="form-control" id="phoneUp" placeholder="Enter phone number"
+                                name="phoneUp" required value="+880 ">
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="pwdUp" placeholder="Enter password"
+                                name="pswdUp" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-success">Update</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--update modal end-->
+
+    <!--prod list modal (myads mycart)-->
+    <div class="modal fade" id="product-modal-cart" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title" id="prod-list-title"></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <ul class="list-group list-group-flush" id="products-added">
+                        <!--dynamic contents-->
+                        <div class="d-flex justify-content-between my-1">
+                            <img src="./assets/products/a.jpg" style="height: 50px;width:50px" alt="">
+                            Bed ->400 taka.
+                            <a href="./cartsPage.html" class="btn btn-primary">view</a>
+                        </div>
+                        <div class="d-flex justify-content-between my-1">
+                            <img src="./assets/products/c3.jpg" style="height: 50px;width:50px" alt="">
+                            Chair ->780 taka.
+                            <a href="./cartsPage.html" class="btn btn-primary">view</a>
+                        </div>
+
+                        <!--dynamic contents end-->
+                    </ul>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--prod list modal end-->
+
+    <!-- my adds -->
+    <div class="modal fade" id="product-modal-ads" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title" id="prod-list-title">Products you have posted</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <ul class="list-group list-group-flush" id="products-posted">
+                        <!--dynamic contents-->
+                        <div class="d-flex justify-content-between my-1">
+                            <img src="./assets/products/b3.jpg" style="height: 50px;width:50px" alt="">
+                            Bed ->500 taka.
+                            <a href="./adsPage.html" class="btn btn-primary">view</a>
+                        </div>
+                        <div class="d-flex justify-content-between my-1">
+                            <img src="./assets/products/t2.jpg" style="height: 50px;width:50px" alt="">
+                            Table ->3400 taka.
+                            <a href="./adsPage.html" class="btn btn-primary">view</a>
+                        </div>
+                        <div class="d-flex justify-content-between my-1">
+                            <img src="./assets/products/t5.jpg" style="height: 50px;width:50px" alt="">
+                            Table ->2200 taka.
+                            <a href="./adsPage.html" class="btn btn-primary">view</a>
+                        </div>
+
+
+                        <!--dynamic contents end-->
+                    </ul>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- my adds end-->
+
+    <!--post ad modal-->
+    <div class="modal fade" id="postAd-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Post an ad!</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <p class="mb-3"><span class="text-danger">*</span>Please upload your captures of your product and DO NOT USE FAKE INFO!</p>
+                    <form class=" " id="postAds" enctype="multipart/form-data">
+                        <div class="form-group d-flex ">
+                            <label for="uname">Image1</label>
+                            <input type="file" class="form-control" id="file1" name="file1" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="form-group d-flex ">
+                            <label for="uname">Image2</label>
+                            <input type="file" class="form-control" id="file2" name="file2" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="form-group d-flex ">
+                            <label for="uname">Image3</label>
+                            <input type="file" class="form-control" id="file3" name="file3" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="form-group d-flex ">
+                            <label for="uname">Image4</label>
+                            <input type="file" class="form-control" id="file4" name="file4" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="form-group mt-5">
+                            
+                            <input type="text" class="form-control" id="AskedPricePostAd" placeholder="Desired Price"
+                                name="AskedPricePostAd" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="form-group form-group-lg my-3">
+                            
+                            <input type="text" class="form-control" id="DescrPostAd"
+                                placeholder="A short description about yor ad" name="DescrPostAd" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="form-group my-3">
+                            
+                            <select class="form-control" id="sel1">
+                                <option>Select Category (select one):</option>
+                                <option>Table</option>
+                                <option>Bed</option>
+                                <option>Chair</option>
+                                <option>Quilt</option>
+                                <option>Others</option>
+                            </select>
+                        </div>
+                        <button type="submit" id="postAdd" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--post ad modal end-->
+
+    <!--bargain-->
+    <div id="bargain-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="my-modal-title">Offer a price compatible for you</h5>
+                    <p>(Leave blank if you agree with the asked price)</p>
+                    <button class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="bargain">
+                        <div class="form-group">
+                            <label for="bargainPc">Price</label>
+                            <input id="bargainPc" class="form-control" type="text" name="Price">
+                        </div>
+                        <button class="btn btn-success" type="submit">Done!</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--bargain end-->
+
+    <!-- conditionals -->
+    <div id="login-or-signup-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header d-flex container" style="display: flex;">
+                    <div>You must</div>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#login-modal"
+                        data-dismiss="modal">Log in</button>
+                    <div>or</div>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#signup-modal"
+                        data-dismiss="modal">Sign up</button>
+                    <div>to proceed.</div>
+                    <button class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- conditionals end-->
+
+
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-md navbar-dark justify-content-between  homepagenav" style="width: 100%;">
+        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+        <img class="logo user ml-n4" src="./assets/system/logo.png" alt="">
+        <div class="d-flex" id="top">
+            <input class="bg-transparent sinput" type="number" id="searchbar" placeholder="e.g. 500৳"
+                autocomplete="off">
+            <select id="prods" class="bg-transparent mr-2 selec">
+                <!-- <option value="null">All types</option> -->
+                <option value="Chairs">Chairs</option>
+                <option value="Beds">Beds</option>
+                <option value="Tables">Tables</option>
+            </select>
+            <button class="btn" id="searchBtn"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </div>
+
+        <div class="dropdown dropleft" id="loggedin">
+            <button class="btn btn-light bg-transparent border-0" data-toggle="dropdown" style="padding: 0;">
+                <img src="./assets/propix/d.jpg" style="max-height: 40px; margin-top: 0; border-radius: 50px;" alt="">
+            </button>
+
+            <div id="colp" class="dropdown-menu ">
+                <div class="dropdown-item activeusr">
+                    <a class="" id="dashboard1" data-toggle="modal" data-target="#postAd-modal">Post an Ad</a>
+                </div>
+                <div class="dropdown-item activeusr">
+                    <a class=" " id="dashboard2" data-toggle="modal" data-target="#update-modal">Update
+                        info</a>
+                </div>
+                <div class="dropdown-item activeusr">
+                    <a class="" id="myAds" data-toggle="modal" data-target="#product-modal-ads">My
+                        Ads</a>
+                </div>
+                <div class="dropdown-item activeusr">
+                    <a class="" id="myCart" data-toggle="modal" data-target="#product-modal-cart">My
+                        cart</a>
+                </div>
+                <div class="dropdown-item activeusr">
+                    <a class="" id="notifications" data-toggle="modal" data-target="#notif_modal">
+                        Notifications
+                    </a>
+                </div>
+                <div class="dropdown-item activeusr">
+                    <a class="" id="logOut"><a href="homepage.html" style="text-decoration: none; color: black;">Log Out</a></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="dropdown dropleft " id="nouser">
+            <button class="btn btn-light bg-transparent border-0" data-toggle="dropdown"
+                style="padding: 0; outline: none;">
+                <img src="./assets/system/Avatar.png" style="max-height: 40px; margin-top: 0;" alt="">
+            </button>
+            <div class="dropdown-menu">
+                <div class="dropdown-item noUser" id="loginbtn" data-toggle="modal" data-target="#login-modal">Log in
+                </div>
+                <div class="dropdown-item noUser" id="signupnbtn" data-toggle="modal" data-target="#signup-modal">Sign
+                    up
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Nav Bar End -->
+
+
+    <div class="container-fluid" style="margin-top:50px; margin-right: 0;">
+
+
+        <div class="row d-flex">
+            <!-- Shortcut -->
+            <div class="col-xs-12 col-md-2 panel scfalse" style="float: left;">
+                <img class="scimg" src="./assets/system/SHORTCUT.png" alt="">
+                <fieldset class="fieldset">
+                    <legend class="text-secondary">Shortcuts</legend>
+
+                    <div class="nav" id="myScrollspy">
+                        <li class="nav-item">
+                            <a class="nav-link " href="#section1">Beds</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section2">Featured</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section3">Chairs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section4">Tables</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#top">Go top</a>
+                        </li>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-sm-12 col-md-2 mt-5 cvb"></div>
+            <!-- Shortcut end -->
+
+            <div class="col-sm-12 col-lg-10" style="float:right; min-width: 500px; ">
+                <div class="extra" style="text-align: center;" id="section1">
+                    <h3 class="mt-5">Looking for some Beds?</h3>
+
+                </div>
+                <div class="pdlist">
+                    <div class="slider">
+                        <ul id="autoWidth1" class="cs-hidden mx-2">
+                            <li id="item-a">
+                                <div class="crdbod product">
+                                    <div class="card m-3 " style="align-items: center;">
+                                        <img src="assets/products/download.jpg" alt="">
+                                        <h4 class="text-success">Price: 450 taka</h4>
+                                        <h5>Used for: 1 year</h5>
+                                        <h6>13 users have offered</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="item-b">
+                                <div class="crdbod product">
+                                    <div class="card m-3 " style="align-items: center;">
+                                        <img src="assets/products/b1.jpg" alt="">
+                                        <h4 class="text-success">Price: 550 taka</h4>
+                                        <h5>Used for: 3 year</h5>
+                                        <h6>4 users have offered</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="item-c">
+                                <div class="crdbod product">
+                                    <div class="card m-3 " style="align-items: center;">
+                                        <img src="assets/products/b2.jpg" alt="">
+                                        <h4 class="text-success">Price: 440 taka</h4>
+                                        <h5>Used for: 2 year</h5>
+                                        <h6>9 users have offered</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="item-d">
+                                <div class="crdbod product">
+                                    <div class="card m-3 " style="align-items: center;">
+                                        <img src="assets/products/b3.jpg" alt="">
+                                        <h4 class="text-success">Price: 540 taka</h4>
+                                        <h5>Used for: 4 year</h5>
+                                        <h6>11 users have offered</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="item-e">
+                                <div class="crdbod product">
+                                    <div class="card m-3 " style="align-items: center;">
+                                        <img src="assets/products/b4.jpg" alt="">
+                                        <h4 class="text-success">Price: 490 taka</h4>
+                                        <h5>Used for: 6 year</h5>
+                                        <h6>16 users have offered</h6>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="jumbotron" id="section2">
+                    <h1 style="display: flex;">Today's Featured</h1>
+                    <hr>
+                    <div class="row d-flex" style="display: flex;justify-content: center; align-items: center;">
+                        <div class="col-sm-12 col-lg-6 mb-5"
+                            style="display: flex;justify-content: center;align-items: center;">
+                            <h3>Product with lowest price</h3>
+                        </div>
+                        <div class="col-sm-12 col-lg-6 mb-5"
+                            style="display: flex;justify-content: center;align-items: center;">
+                            <div class="card product" style="width:400px">
+                                <img class="card-img-top" src="./assets/products/a.jpg" alt="Card image" style="width:100%">
+                                <div class="card-body">
+                                    <h4 class="text-success">Price: 1450 taka</h4>
+                                    <h5>Category: Bed</h5>
+                                    <h5>Used for: 5 year</h5>
+                                    <h6>9 users have offered</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-flex" style="display: flex;justify-content: center;align-items: center;">
+
+                        <div class="col-sm-12 col-lg-6 mb-5"
+                            style="display: flex;justify-content: center;align-items: center;">
+                            <div class="card product" style="width:400px">
+                                <img class="card-img-top" src="./assets/products/ft1.jpg" alt="Card image" style="width:100%">
+                                <div class="card-body">
+                                    <h4 class="text-success">Price: 2430 taka</h4>
+                                    <h5>Category: Table</h5>
+                                    <h5>Used for: 3 year</h5>
+                                    <h6>23 users have offered</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-6 mb-5"
+                            style="display: flex;justify-content: center;align-items: center;">
+                            <h3>Least used product</h3>
+                        </div>
+                    </div>
+                    <div class="row d-flex" style="display: flex;justify-content: center;align-items: center;">
+                        <div class="col-sm-12 col-lg-6 mb-5"
+                            style="display: flex;justify-content: center;align-items: center;">
+                            <h3>Most popular product</h3>
+                        </div>
+                        <div class="col-sm-12 col-lg-6 mb-5"
+                            style="display: flex;justify-content: center;align-items: center;">
+                            <div class="card product" style="width:400px">
+                                <img class="card-img-top" src="./assets/products/fc1.jpg" alt="Card image" style="width:100%">
+                                <div class="card-body">
+                                    <h4 class="text-success">Price: 2250 taka</h4>
+                                    <h5>Category: Chair</h5>
+                                    <h5>Used for: 1 year</h5>
+                                    <h6>19 users have offered</h6>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="extra my-5" style="text-align: center;" id="section3">
+                    <h3>We have good quality chairs that are worth checking out</h3>
+
+                </div>
+                <div class="pdlist">
+                    <hr>
+                    <div class="slider">
+                        <ul id="autoWidth2" class="cs-hidden mx-2">
+                            <li id="item-a product">
+                                <div class="crdbod">
+                                    <div class="card m-3 " style="align-items: center;">
+                                        <img src="./assets/products/c1.jpg" style="width: 300px;" alt="">
+                                        <h4 class="text-success">Price: 1220 taka</h4>
+                                        <h5>Used for: 2 year</h5>
+                                        <h6>22 users have offered</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="item-b product">
+                                <div class="crdbod">
+                                    <div class="card m-3 " style="align-items: center;">
+                                        <img src="./assets/products/c2.jpg" style="width: 300px;" alt="">
+                                        <h4 class="text-success">Price: 3350 taka</h4>
+                                        <h5>Used for: 7 months</h5>
+                                        <h6>2 users have offered</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="item-c product">
+                                <div class="crdbod">
+                                    <div class="card m-3 " style="align-items: center;">
+                                        <img src="./assets/products/c3.jpg" style="width: 300px;" alt="">
+                                        <h4 class="text-success">Price: 4550 taka</h4>
+                                        <h5>Used for: 3 year</h5>
+                                        <h6>4 users have offered</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="item-d product">
+                                <div class="crdbod">
+                                    <div class="card m-3 " style="align-items: center;">
+                                        <img src="./assets/products/c4.jpg" style="width:300px;" alt="">
+                                        <h4 class="text-success">Price: 1110 taka</h4>
+                                        <h5>Used for: 4 year</h5>
+                                        <h6>63 users have offered</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="item-e product">
+                                <div class="crdbod">
+                                    <div class="card m-3 " style="align-items: center;">
+                                        <img src="./assets/products/c5.jpg" style="width: 300px;" alt="">
+                                        <h4 class="text-success">Price: 2340 taka</h4>
+                                        <h5>Used for: 1 year</h5>
+                                        <h6>33 users have offered</h6>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="extra1" style="text-align: center;">
+                    <h2>Wait there's more!</h2>
+                </div>
+
+
+                <div class="extra my-5" style="text-align: center;" id="section4">
+                    <h3>Perhaps quality tables are waiting for you..</h3>
+                </div>
+                <div class="pdlist">
+                    <hr>
+                    <div class="slider">
+                        <ul id="autoWidth3" class="cs-hidden mx-2">
+                            <li id="item-a">
+                                <div class="crdbod product">
+                                    <div class="card m-3 " style="align-items: center;">
+                                        <img src="./assets/products/t1.jpg" style="width: 300px;" alt="">
+                                        <h4 class="text-success">Price: 450 taka</h4>
+                                        <h5>Used for: 1 year</h5>
+                                        <h6>99 users have offered</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="item-b">
+                                <div class="crdbod product">
+                                    <div class="card m-3 " style="align-items: center;">
+                                        <img src="./assets/products/t2.jpg" style="width: 300px;" alt="">
+                                        <h4 class="text-success">Price: 3350 taka</h4>
+                                        <h5>Used for: 4 year</h5>
+                                        <h6>78 users have offered</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="item-c">
+                                <div class="crdbod product">
+                                    <div class="card m-3 " style="align-items: center;">
+                                        <img src="./assets/products/t3.jpg" style="width: 300px;" alt="">
+                                        <h4 class="text-success">Price: 4220 taka</h4>
+                                        <h5>Used for: 2 year</h5>
+                                        <h6>67 users have offered</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="item-d">
+                                <div class="crdbod product">
+                                    <div class="card m-3 " style="align-items: center;">
+                                        <img src="./assets/products/t4.jpg" style="width:300px;" alt="">
+                                        <h4 class="text-success">Price: 4110 taka</h4>
+                                        <h5>Used for: 3 year</h5>
+                                        <h6>56 users have offered</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="item-e ">
+                                <div class="crdbod product">
+                                    <div class="card m-3 " style="align-items: center;">
+                                        <img src="./assets/products/t5.jpg" style="width: 300px;" alt="">
+                                        <h4 class="text-success">Price: 9800 taka</h4>
+                                        <h5>Used for: 5 year</h5>
+                                        <h6>45 users have offered</h6>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Product Slider End-->
+    </div>
+
+
+    <footer class="page-footer font-small lightblue ">
+
+        <!-- Footer Links -->
+        <!-- text-center text-md-left -->
+        <div class="container-fluid">
+
+            <!-- Grid row -->
+            <div class="row">
+                <!-- about us -->
+                <div class="col-md-4">
+                    <h5 class="text-primary font-weight-bold text-uppercase mt-3 mb-4">About Us</h5>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum omnis rerum harum laboriosam
+                        quos, sint ut explicabo laborum doloremque vero illo minus, maxime dignissimos eos libero,
+                        magnam quas eveniet ipsam?</p>
+                </div>
+                <!-- about us -->
+                <!-- Grid column -->
+                <div class="col-md-4 social_icon">
+
+                    <!-- Links -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-primary">Social Links</h5>
+
+                    <a href="#!"><i class="fab fa-facebook "></i> </a>
+                    <a href="#!"><i class="fab fa-twitter "></i> </a>
+                    <a href="#!"><i class="fas fa-envelope "></i></a>
+                    <a href=""><i class="fab fa-youtube"></i></a>
+                    <!-- <ul class="list-unstyled">
+                        <li>
+                            
+                        </li>
+                        <li>
+                            
+                        </li>
+                        <li>
+                           </i> </a>
+                        </li>
+
+                    </ul> -->
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-4">
+
+                    <!-- Links -->
+                    <h5 class="text-primary font-weight-bold text-uppercase mt-3 mb-4">This Website was powered by</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            HTML
+                        </li>
+                        <li>
+                            CSS
+                        </li>
+                        <li>
+                            javascript
+                        </li>
+                        <li>
+                            bootstrap
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="/"> marketplace_management.com</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+</body>
+
+<script>
+    function getel(x) {
+        return document.getElementById(x)
+    }
+    var acptbtn = document.getElementsByClassName('ownerLogd')
+    for (let n = 0; n < acptbtn.length; n++) {
+        acptbtn[n].style.display = 'none'
+    }
+    var active = getel('loggedin')
+    var nouser = getel('nouser')
+    active.style.display = 'none'
+    getel('submit_reg').onclick = () => {
+        nouser.style.display = 'none'
+        active.style.display = 'block'
+        $('signup-modal').modal('hide')
+        for (let n = 0; n < acptbtn.length; n++) {
+            acptbtn[n].style.display = 'block'
+        }
+    }
+
+    getel('login-normal').onclick = () => {
+        $('login-normal').modal('hide');
+
+        nouser.style.display = 'none'
+        active.style.display = 'block'
+        $('signup-modal').modal('hide')
+        for (let n = 0; n < acptbtn.length; n++) {
+            acptbtn[n].style.display = 'block'
+        }
+    }
+    var productroot = document.getElementsByClassName('product')
+    for (let n = 0; n < productroot.length; n++) {
+        productroot[n].onclick = () => {
+            window.location.href = './productpage.html'
+        }
+    }
+
+    getel('searchBtn').onclick = () => {
+        var vl = getel('prods').value
+        var pc = getel('searchbar').value
+        var a = document.getElementsByClassName('prixe')
+        for (let n = 0; n < a.length; n++) {
+            let m = parseInt(pc)+(n*9);
+            a[n].innerHTML = `Price: ৳ ${m}`
+        }
+        var b = document.getElementsByClassName('ctgr')
+        for (let n = 0; n < a.length; n++) {
+            b[n].innerHTML = `Category: ${vl}`
+        }
+        var b = document.getElementsByClassName('negro')
+        for (let n = 0; n < a.length; n++) {
+            b[n].src = `./assets/products/${vl}${n+1}.jpg`
+        }
+        $('#searchResultModal').modal({ show: true })
+    }
+
+    $(".scimg").click(function () {
+        $(this).toggleClass("click");
+        $('.fieldset').toggleClass("show");
+    });
+
+    getel('postAdd').onclick = () => {
+        var posted = getel('products-posted')
+        posted.innerHTML = `
+        <div class="d-flex justify-content-between">
+            <img src="./assets/d.jpg" style="height: 50px;width:50px" alt="">
+            Table.500 taka.
+            <a href="/adsPage.html" class="btn btn-primary">view</a>
+        </div>
+        `
+            + posted.innerHTML;
+        $('#postAd-modal').modal('hide')
+        $('#product-modal-ads').modal({ show: true })
+
+    }
+</script>
+
+</html>
